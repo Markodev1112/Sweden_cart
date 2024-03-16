@@ -4,7 +4,7 @@
     assign continue_shopping_page = section.settings.continue_shopping_page
   endif
 -%}
-<style>
+{% style %}
   .custom-cart .custom-page {
     width: 90%;
     margin: auto;
@@ -24,7 +24,7 @@
         padding: 0px;
     }
   }
-</style>
+{%endstyle%}
 <div class="custom-cart" style="background-color: {{section.settings.cart_backbg}};">
 <div class="py-medium content custom-page" data-section-type="cart-template" >
   {% if section.settings.cart_show_title %}
@@ -200,7 +200,7 @@
                       {% endif %}
                       
                       <div class="quantity-and-remove">
-                        <div class="quantity-section" style="display: flex; gap: 10px; ">
+                        <div class="quantity-section" >
                           {% if item.product.metafields.my_fields.antal_plattor_per_kvm %}
                             {% unless item.product.tags contains 'Kantsten' or item.product.tags contains 'Stolpar' or item.product.tags contains 'Trappor' %}
                               <div class="item-quantity ratio">  
